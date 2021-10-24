@@ -51,6 +51,7 @@ namespace Methods
                     calculatedValue = multiplyValues(leftHandSide, rightHandSide);
                     showResult(calculatedValue);
                 }
+                /*
                 else if (division.IsChecked.HasValue && division.IsChecked.Value)
                 {
                     calculatedValue = divideValues(leftHandSide, rightHandSide);
@@ -60,7 +61,16 @@ namespace Methods
                 {
                     calculatedValue = remainderValues(leftHandSide, rightHandSide);
                     showResult(calculatedValue);
+                }*/
+                else if (division.IsChecked.HasValue && division.IsChecked.Value)
+                {
+                    int division, remainder;
+                    (division, remainder) = divide(leftHandSide, rightHandSide);
+
+                    result.Text = $" remainder ";
                 }
+                
+
             }
             catch (Exception caught)
             {
@@ -86,7 +96,7 @@ namespace Methods
             expression.Text = $"{leftHandSide} * {rightHandSide}";
             return leftHandSide * rightHandSide;
         }
-
+        /*
         private int divideValues(int leftHandSide, int rightHandSide)
         {
             expression.Text = $"{leftHandSide} / {rightHandSide}";
@@ -98,7 +108,14 @@ namespace Methods
             expression.Text = $"{leftHandSide} % {rightHandSide}";
             return leftHandSide % rightHandSide;
         }
-
+        */
+        private (int, int) divide(int leftHandSide, int rightHandSide)
+        {
+            expression.Text = $" / ";
+            int division = leftHandSide / rightHandSide;
+            int remainder = leftHandSide %  rightHandSide;
+            return (division, remainder);
+        }
         private void showResult(int answer) => result.Text = answer.ToString();
     }
 }

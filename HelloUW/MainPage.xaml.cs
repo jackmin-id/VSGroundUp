@@ -30,8 +30,19 @@ namespace HelloUW
 
         private void okClick(object sender, RoutedEventArgs e)
         {
-            MessageDialog msg = new MessageDialog("Hello UWP " + userName.Text);
+            int div, rem;
+            (div, rem) = divide(43, 4);
+            string s = $" {div} {rem} ";
+            MessageDialog msg = new MessageDialog("Hello UWP " + userName.Text + s);
             msg.ShowAsync();
+        }
+
+        private (int, int) divide(int leftHandSide, int rightHandSide)
+        {
+            //expression.Text = $" / ";
+            int division = leftHandSide / rightHandSide;
+            int remainder = leftHandSide % rightHandSide;
+            return (division, remainder);
         }
     }
 }
