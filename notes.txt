@@ -1,3 +1,6 @@
 Original code is 2017, and have some issue with 2019
 
 helloWU-Method is generated in 2019, then added the xml, cs code from Methods, so ValueTuples work
+
+10/24/2021 page 193, chapter 4
+page 201
